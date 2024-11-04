@@ -232,6 +232,8 @@ tr:nth-child(even) td {
     </style>
 </head>
 <body>
+</head>
+<body>
     <header>
         <h1>Accesorios de Computación</h1>
         <h2>Bienvenido a nuestra tienda</h2>
@@ -263,12 +265,11 @@ tr:nth-child(even) td {
                         <tr>
                             <th>CANTIDAD</th>
                             <th>DESCRIPCIÓN</th>
-                            <th>PRECIO UNITARIO</th>
-                            <th>IMPORTE</th>
+                            <th>PRECIO UNITARIO (Bs)</th>
+                            <th>IMPORTE (Bs)</th>
                         </tr>
                     </thead>
                     <tbody>
-                       
                     </tbody>
                 </table>
                 <button type="button" onclick="agregarProducto()">Agregar Producto</button>
@@ -276,9 +277,9 @@ tr:nth-child(even) td {
 
             <div class="totales">
                 <h2>Totales</h2>
-                <p>Subtotal: <span id="subtotal">0</span></p>
+                <p>Subtotal (Bs): <span id="subtotal">0</span></p>
                 <p>IVA (13%): <span id="iva">0</span></p>
-                <p>Importe Final: <span id="importeFinal">0</span></p>
+                <p>Importe Final (Bs): <span id="importeFinal">0</span></p>
             </div>
 
             <button type="submit">Enviar</button>
@@ -303,6 +304,7 @@ tr:nth-child(even) td {
                         <option value="2160" data-precio="2160">Gaming Monitor 34" Curved WQHD 3440×1440</option>
                         <option value="150" data-precio="150">Auriculares inalámbricos Gaming Headset Display</option>
                         <option value="180" data-precio="180">Cámara Web HD 1080p</option>
+                        <option value="225" data-precio="225">Parlantes de Escritorio HY-218</option>
                     </select>
                     <div class="imagenProducto" style="margin-top: 5px;"></div>
                 </td>
@@ -320,7 +322,7 @@ tr:nth-child(even) td {
 
             const imagenDiv = row.querySelector('.imagenProducto');
             let imagenSrc = '';
-            
+            // Asignar imagenes según el producto seleccionado
             if (select.value == "200") {
                 imagenSrc = 'accesorios/teclado.jpg';
             } else if (select.value == "310") {
@@ -333,6 +335,8 @@ tr:nth-child(even) td {
                 imagenSrc = 'accesorios/auriculares2.webp';
             } else if (select.value == "180") {
                 imagenSrc = 'accesorios/camara.jpg';
+            } else if (select.value == "225") {
+                imagenSrc = 'accesorios/parlantes.jpg';
             }
             
             if (imagenSrc) {
@@ -408,4 +412,6 @@ tr:nth-child(even) td {
         }
     </script>
 </body>
+
+
 </html>
